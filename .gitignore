@@ -5,5 +5,3 @@ server/public/assets
 server/public/build
 npm-debug.log
 views/layout.html
-config/pm2.json
-config/server.json
