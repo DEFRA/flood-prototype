@@ -6,4 +6,12 @@ module.exports = [{
       view: 'test'
     }
   }
+}, {
+  method: 'GET',
+  path: '/flood-test',
+  config: {
+    handler: {
+      view: 'flood-test'
+    }
+  }
 }]
