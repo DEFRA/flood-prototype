@@ -9,7 +9,7 @@ var content = '\
 \r\t\t{{> afterContent }}\
 </div>'
 
-var cmd = "sed -i \
+var cmd = "sed -i.bak \
 -e 's${{{ content }}}$" + content + "$g' \
 -e 's${{{ topOfPage }}}${{> topOfPage }}$g' \
 -e 's${{{ head }}}${{> head }}$g' \
@@ -22,7 +22,7 @@ var cmd = "sed -i \
 -e 's${{{ footerSupportLinks }}}${{> footerSupportLinks }}$g' \
 -e 's${{{ licenceMessage }}}${{> licenceMessage }}$g' \
 -e 's${{{ bodyEnd }}}${{> bodyEnd }}$g' \
-server/views/layout.html"
+server/views/layout.html && rm -f server/views/layout.html.bak"
 
 exec(cmd, function (err) {
   if (err) {
